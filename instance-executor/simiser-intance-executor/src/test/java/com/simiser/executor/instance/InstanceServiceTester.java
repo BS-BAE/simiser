@@ -24,8 +24,8 @@ public class InstanceServiceTester {
 	public void addInstance() {
 		InstanceRequest ir = new InstanceRequest("bbs"
 				, RequestType.ADD
-				, new SpotInstance("AKIAJVI5T7BU4TQKFO6A"
-						, "Bh85aHMYo0W/bW0QjEqeO9W1Yw3HfaZ5e8UPYqUe"
+				, new SpotInstance(""
+						, ""
 						, "eu-west-1"
 						, "eu-west-1a"
 						, "subnet-f9b9b89e"
