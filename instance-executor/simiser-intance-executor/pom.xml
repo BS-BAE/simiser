@@ -22,6 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<aws.version>1.11.261</aws.version>
 	</properties>
 
 	<dependencies>
@@ -29,7 +30,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-dynamodb -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-dynamodb</artifactId>
+			<version>${aws.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-ec2 -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-ec2</artifactId>
+			<version>${aws.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.github.derjust/spring-data-dynamodb -->
+		<dependency>
+			<groupId>com.github.derjust</groupId>
+			<artifactId>spring-data-dynamodb</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
