@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.simiser.executor.SimiserIntanceExecutorApplication;
 import com.simiser.executor.instance.domain.InstanceRequest;
+import com.simiser.executor.instance.domain.RequestType;
+import com.simiser.executor.instance.domain.SpotInstance;
 import com.simiser.executor.instance.repo.InstanceRequestRepository;
 
 @RunWith(SpringRunner.class)
@@ -21,7 +23,16 @@ public class InstanceRepoTester {
 	
 	@Test
 	public void get() {
-		InstanceRequest ir = repo.findOne("test");
-		assertThat(ir.getRequestId()).isEqualTo("test");
+		InstanceRequest ir = new InstanceRequest();
+		ir.setUserId("user");
+		ir.setData(new SpotInstance());
+		ir.setType(RequestType.ADD);
+		InstanceRequest saved = repo.save(ir);
+		InstanceRequest result = repo.findOne(saved.getId());
+		assertThat(result.getId()).isEqualTo(saved.getId());
+		
+		repo.delete(saved.getId());
+		
+		assertThat(repo.exists(saved.getId())).isEqualTo(false);
 	}
 }
